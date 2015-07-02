@@ -1,0 +1,40 @@
+<%= form_for @message, :html => { :class => "form-horizontal message" } do |f| %>
+
+    <% if @message.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @message.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+      <%= f.hidden_field :sender, :value => current_user.name %>
+
+    <div class="control-group">
+      <%= f.label :recipient, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.select(:recipient, @recipients.map { |value| [ value, value ] }) %>
+      </div>
+      <%= error_span(@message[:sender]) %>
+    </div>
+  <div class="control-group">
+    <%= f.label :message, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :message, :class => 'form-control' %>
+    </div>
+    <%= error_span(@message[:message]) %>
+  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            messages_path, :class => 'btn btn-default' %>
+
+<% end %>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WebClient</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<% if logged_in?%>
+    User: <%= current_user.name %>
+    <%= link_to "Messages", messages_path %>
+    <%= link_to "Logout", logout_path, method: :delete %>
+<% else%>
+    <%= link_to "Login", login_path %>
+<% end %>
+<%= yield %>
+</body>
+</html>

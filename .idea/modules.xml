@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../budget/.idea/budget.iml" filepath="$PROJECT_DIR$/../budget/.idea/budget.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../secure_message_api_v2/.idea/secure_message_api_v2.iml" filepath="$PROJECT_DIR$/../secure_message_api_v2/.idea/secure_message_api_v2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/web_client.iml" filepath="$PROJECT_DIR$/.idea/web_client.iml" />
+    </modules>
+  </component>
+</project>
